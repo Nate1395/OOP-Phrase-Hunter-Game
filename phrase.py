@@ -2,5 +2,5 @@
 
 class Phrase:
     def __init__(self, phrase):
-        self.lower().phrase = phrase
+        self.phrase = phrase.lower()
         

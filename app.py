@@ -1,20 +1,20 @@
 # Import your Game class
 from game import Game
-from phrase import Phrase
 
+def print_phrase(phrase_object):
+    print(f'The phrase is: {phrase_object.phrase}')
 
-phrase = Phrase()
 game = Game()
-
-
-phrase = Phrase('Life is like a box of chocolates')
-print(phrase.phrase)
+print_phrase(game.get_random_phrase()) 
+print_phrase(game.get_random_phrase()) 
+print_phrase(game.get_random_phrase()) 
+print_phrase(game.get_random_phrase()) 
+print_phrase(game.get_random_phrase())
 
 
 # Create your Dunder Main statement.
 if __name__ == "__main__":
-    game = Game()
-    phrase = Phrase()
+    pass
 # Inside Dunder Main:
 ## Create an instance of your Game class
 ## Start your game by calling the instance method that starts the game loop
