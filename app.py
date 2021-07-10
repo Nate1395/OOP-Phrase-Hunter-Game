@@ -1,16 +1,9 @@
 # Import your Game class
 from game import Game
 
-def print_phrase(phrase_object):
-    print(f'The phrase is: {phrase_object.phrase}')
 
 game = Game()
-print_phrase(game.get_random_phrase()) 
-print_phrase(game.get_random_phrase()) 
-print_phrase(game.get_random_phrase()) 
-print_phrase(game.get_random_phrase()) 
-print_phrase(game.get_random_phrase())
-
+game.start()
 
 # Create your Dunder Main statement.
 if __name__ == "__main__":
