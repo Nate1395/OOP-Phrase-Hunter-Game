@@ -41,15 +41,6 @@ class Game:
                 self.missed += 1
             self.active_phrase.check_complete(self.guesses)
         self.game_over()
-
-        play_again = input("Would you like to play again? \n\n\
-                            Please, enter Yes or No. --> ")
-        
-        if play_again.lower() == "yes":
-            print("\nAll right! Here we go.\n")
-            self.start()
-        elif play_again.lower() == "no":
-            print("\nGame over. I hope you havd fun!")
     
     def get_guess(self):
         guess = str(input("\nGuess a letter. --> "))
