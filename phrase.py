@@ -12,3 +12,15 @@ class Phrase:
                 print(f'{letter}', end = " ")
             else:
                 print('_', end = ' ')
+    
+    def check_guess(self, guess):
+        if guess in self.phrase:
+            return True
+        else:
+            return False
+    
+    def check_complete(self, guesses):
+        for letter in self.phrase:
+            if letter not in guesses:
+                return False
+        return True

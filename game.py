@@ -31,12 +31,32 @@ class Game:
         
     def start(self):
         self.welcome()
-        print('Number missed: ', self.missed, end = '\n\n')
-        self.active_phrase.display(self.guesses)
-        self.user_guess = self.get_guess()
-        self.guesses.append(self.user_guess)
-        print(self.user_guess)
+        while self.missed < 5 and self.active_phrase.check_complete(self.guesses) == False:
+            print('Number missed: ', self.missed, end = '\n\n')
+            self.active_phrase.display(self.guesses)
+            user_guess = self.get_guess()
+            self.guesses.append(user_guess)
+            self.active_phrase.check_guess(user_guess)
+            if not self.active_phrase.check_guess(user_guess):
+                self.missed += 1
+            self.active_phrase.check_complete(self.guesses)
+        self.game_over()
+
+        play_again = input("Would you like to play again? \n\n\
+                            Please, enter Yes or No. --> ")
+        
+        if play_again.lower() == "yes":
+            print("\nAll right! Here we go.\n")
+            self.start()
+        elif play_again.lower() == "no":
+            print("\nGame over. I hope you havd fun!")
     
     def get_guess(self):
         guess = str(input("\nGuess a letter. --> "))
         return guess.lower()
+    
+    def game_over(self):
+        if self.missed == 5:
+            print('Oh no! You lost.')
+        else:
+            print('Congratulations! You won the game.')
